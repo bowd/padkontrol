@@ -24,9 +24,7 @@ export default class Controls extends Component {
   }
 
   bmpChanged = (e) => {
-    console.log(e.target.value);
     let bpm = parseInt(e.target.value);
-    console.log(bpm);
     SequencerActionCreators.setBPM(bpm);
   }
 
