@@ -30,11 +30,11 @@ const initialState = Immutable.fromJS({
     },
     6: {
       label: 'Bass',
-      file: require('samples/bassloop.wav')
+      file: require('samples/bassloop2.wav')
     },
     7: {
       label: 'Lead',
-      file: require('samples/lead.wav')
+      file: require('samples/lead2.wav')
     }
   },
   highlighted: {}

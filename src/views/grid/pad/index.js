@@ -11,7 +11,8 @@ const { string, number } = PropTypes;
   interests: ({idx}) => ({
     [`pads.samples.${idx}.label`]: 'label',
     [`pads.samples.${idx}.file`]: 'file',
-    [`pads.highlighted.${idx}`]: 'highlighted'
+    [`pads.highlighted.${idx}`]: 'highlighted',
+    'sequencer.activePad': 'currentActivePad'
   })
 })
 export default class Pad extends Component {
@@ -29,7 +30,8 @@ export default class Pad extends Component {
 
   render() {
     let cx = classnames('padWrapper', {
-      'is-highlighted': this.props.highlighted
+      'is-highlighted': this.props.highlighted,
+      'is-active': this.props.currentActivePad === this.props.idx
     });
     console.log(this.props.highlighted);
     return (
