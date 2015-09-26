@@ -18,13 +18,10 @@ const SequencerActionCreators = {
     dispatch({ type: 'ADVANCE_BEAT' });
   },
 
-  toggleBeat: function(barId, beatId){
+  toggleBeat: function(barId, beatId, padId){
   	dispatch({
   		type: 'TOGGLE_BEET',
-  		payload:{
-  			barId,
-  			beatId
-  		}
+  		payload:{ barId, beatId, padId }
   	});
   }
 

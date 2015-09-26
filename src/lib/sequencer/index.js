@@ -1,4 +1,5 @@
 import SequencerActionCreators from 'action_creators/sequencer';
+import PlayActionCreators from 'action_creators/play';
 
 export default class Sequencer {
   constructor(props) {
@@ -7,7 +8,7 @@ export default class Sequencer {
 
   setProps({samples, activeSamples, bpm, playing}) {
     this.samples = samples;
-    this.activeSamples = activeSamples;
+    this.activeSamples = activeSamples || [];
     this.bpm = bpm;
   }
 
@@ -18,6 +19,12 @@ export default class Sequencer {
   play() {
     this.playing = true;
     setTimeout(this.tick, this.interval());
+  }
+
+  playSamples() {
+    for (let sample of this.activeSamples) {
+      PlayActionCreators.playSample(this.samples[sample].file);
+    }
   }
 
   stop() {

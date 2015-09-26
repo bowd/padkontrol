@@ -4,7 +4,7 @@ import Immutable from 'immutable';
 const initialState = Immutable.fromJS({
   currentActivePad: 0,
   activeBeat: -1,
-	activePads: [[false, false, false, false],[false, false, false, false],[false, false, false, false],[false, false, false, false]]
+  activePads: {}
 });
 
 
@@ -12,18 +12,21 @@ function init(state) {
 
 }
 
-function toggleBeat(state, {barId, beatId}){
-	var beatStatus = initialState.getIn(['activePads', barId, beatId]);
-  var nextBeatStatus;
+function toggleBeat(state, {barId, beatId, padId}){
+  let globalBeat = (barId-1) * 4 + beatId;
+  let activeSamples =
+    state.getIn(['activePads', globalBeat]) || [];
 
+  let index = activeSamples.indexOf(padId);
 
-  if( beatStatus === undefined ){
-    nextBeatStatus = true;
+  if (index === -1) {
+    activeSamples.push(padId);
   } else {
-    nextBeatStatus = !beatStatus;
+    activeSamples.splice(index, 1);
   }
 
-  initialState.setIn(['activePads', barId, beatId], nextBeatStatus);
+  state.setIn(['activePads', globalBeat.toString()], Immutable.fromJS(activeSamples));
+  return state;
 }
 
 function changeActivePad(state, {padId}) {

@@ -7,17 +7,17 @@ let { number, bool, object, array } = PropTypes;
 
 @connect({
   interests: {
-    'pad.samples': 'samples',
+    'pads.samples': 'samples',
     'sequencer.currentActivePad': 'activePad',
-    'sequencer.playingBeat': 'playingBeat',
+    'sequencer.activeBeat': 'activeBeat',
     'global.playing': 'playing',
     'global.bpm': 'bpm'
   }
 })
 @connect({
-  interests: ({playingBeat}) => {
+  interests: ({activeBeat}) => {
     return {
-      [ `sequencer.activeSamples.${playingBeat}` ]: 'activeSamples'
+      [ `sequencer.activePads.${activeBeat}` ]: 'activeSamples'
     }
   },
 

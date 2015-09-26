@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import SequencerActionCreators from 'action_creators/sequencer';
 import { connect } from 'lib/flux';
 import style from './index.css';
-let { number } = PropTypes;
+let { number, array } = PropTypes;
 
 const colors = {
   1: '#16a085',
@@ -12,13 +12,21 @@ const colors = {
 }
 
 @connect({
-  interests: {
-    'sequencer.activeBeat': 'activeBeat'
+  interests: ({barIdx, idx}) => {
+    let globalBeat = (barIdx-1) * 4 + idx;
+    return {
+      'sequencer.activeBeat': 'activeBeat',
+      [`sequencer.activePads.${globalBeat}`]: 'activeSamples'
+    }
   }
 })
 export default class Beat extends Component {
   static propTypes = {
-    playingBeat: number
+    playingBeat: number,
+    activeSamples: array,
+    barIdx: number,
+    idx: number,
+    pad: number
   }
 
   isPlaying() {
@@ -26,8 +34,12 @@ export default class Beat extends Component {
     return (barIdx-1) * 4 + idx === activeBeat + 1;
   }
 
+  isActive() {
+    return (this.props.activeSamples || []).indexOf(this.props.pad) !== -1;
+  }
+
   onTrigger = () => {
-    SequencerActionCreators.toggleBeat( this.props.idx, this.props.barIdx );
+    SequencerActionCreators.toggleBeat( this.props.barIdx, this.props.idx, this.props.pad );
   }
 
   render() {
@@ -36,6 +48,7 @@ export default class Beat extends Component {
     };
 
     let classNames = 'Beat' + (this.isPlaying() ? ' is-playing' : '');
+    classNames += (this.isActive() ? ' is-active' : '');
 
     return (
       <span className={classNames}
