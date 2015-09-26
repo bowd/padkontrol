@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './index.css';
+
 const colors = {
   1: '#16a085',
   2: '#3498db',

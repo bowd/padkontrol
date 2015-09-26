@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ROOT = path.resolve(path.join('.', 'src'));
 
 module.exports = {
   devtool: 'eval',
@@ -16,6 +17,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+    root: [ ROOT ],
+  },
   module: {
     loaders: [{
       test: /\.js$/,
@@ -24,6 +28,9 @@ module.exports = {
     }, {
       test: /\.css$/,
       loaders: ['style', 'css', 'autoprefixer']
+    }, {
+      test: /\.wav$/,
+      loaders: [ 'file']
     }]
   }
 };
