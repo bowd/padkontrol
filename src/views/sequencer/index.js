@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Bar from './bar';
+import style from './index.css';
 
 export default class Sequencer extends Component {
   render() {
@@ -7,7 +8,7 @@ export default class Sequencer extends Component {
       <div className="Sequencer">
         {
           [1, 2, 3, 4].map((barIdx) => (
-            <Bar idx={barIdx} />
+            <Bar idx={barIdx} pad={1}/>
           ))
         }
       </div>

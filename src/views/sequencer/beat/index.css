@@ -1,0 +1,28 @@
+.Beat {
+  display: block;
+  float: left;
+  width: 25%;
+  text-align: center;
+  line-height: 25px;
+}
+
+.Beat-Indicator {
+  display: block;
+  width: 30px;
+  height: 40px;
+  margin: auto;
+  box-shadow: 0px 0px 1px 1px white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Beat-Active {
+  color: #8C6662;
+  font-size: 40px;
+}
+
+.Beat.is-playing .Beat-Active,
+.Beat.is-active .Beat-Active {
+  color: #FFFD88;
+}
+
