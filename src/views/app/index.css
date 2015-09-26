@@ -1,3 +1,24 @@
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 .App {
   width: 800px;
   margin: auto;
@@ -6,4 +27,19 @@
   padding: 20px;
   height: 400px;
   border-radius: 20px;
+}
+
+
+.Controls-container,
+.Grid-container{
+	float: left;
+}
+
+.Controls-container{
+	width: 100px;
+}
+
+.Grid-container{
+	width: calc(100% - 100px);
+	padding: 10px;
 }
