@@ -4,49 +4,46 @@ import _style from './index.css';
 
 var temp = {
 	
-	pad_1: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
+  pad_1: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
 
-	pad_2: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
-	
-	pad_3: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
-	
-	pad_4: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},	
+  pad_2: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
+  
+  pad_3: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
+  
+  pad_4: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },  
 
-	pad_5: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
+  pad_5: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
 
-	pad_6: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
-	
-	pad_7: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
-	
-	pad_8: {
-		'name' : 'Pad Name',
-		'url' : 'url'
-	},
-
+  pad_6: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
+  
+  pad_7: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  },
+  
+  pad_8: {
+    'name' : 'Pad Name',
+    'url' : 'url'
+  }
 };
-
-console.log(Object.keys);
 
 export default class Grid extends Component {
 

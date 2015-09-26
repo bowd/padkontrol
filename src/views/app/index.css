@@ -64,4 +64,5 @@ body{
 .Grid-container{
 	width: calc(100% - 100px);
 	padding: 10px;
+	padding-left: 18px;
 }
