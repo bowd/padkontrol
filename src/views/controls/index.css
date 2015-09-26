@@ -1,0 +1,17 @@
+.Controls {
+  padding-top: 15px;
+}
+
+.Controls input.Tempo {
+  margin-top: 40px;
+  width: 40px;
+  color: #d35400;
+  border: 0px;
+  text-align: center;
+}
+
+.Controls .Tempo-Label {
+  position: relative;
+  left: 4px;
+  color: #d35400;
+}

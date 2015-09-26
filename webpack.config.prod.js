@@ -31,8 +31,8 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
-      loaders: ['style', 'css', 'autoprefixer'],
-      include: path.join(__dirname, 'src')
+      loaders: ['style', 'css', 'autoprefixer']
     }]
   }
 };
+
