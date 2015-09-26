@@ -12,7 +12,7 @@ const { string, number } = PropTypes;
     [`pads.samples.${idx}.label`]: 'label',
     [`pads.samples.${idx}.file`]: 'file',
     [`pads.highlighted.${idx}`]: 'highlighted',
-    'sequencer.activePad': 'currentActivePad'
+    'sequencer.currentActivePad': 'currentActivePad'
   })
 })
 export default class Pad extends Component {
