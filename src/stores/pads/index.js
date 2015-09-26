@@ -36,11 +36,25 @@ const initialState = Immutable.fromJS({
       label: 'Lead',
       file: require('samples/lead.wav')
     }
-  }
+  },
+  highlighted: {}
 });
+
+function highlight(state, {padId}) {
+  state.setIn(['highlighted', padId.toString()], true);
+  return state
+}
+
+function unhighlight(state, {padId}) {
+  state.setIn(['highlighted', padId.toString()], false);
+  return state
+}
+
 
 
 export default function reducer(state=initialState, action) {
   return actionSwitch({
+    HIGHLIGHT_FROM_SEQUENCER: highlight,
+    UNHIGHLIGHT_FROM_SEQUENCER: unhighlight
   }, state, action);
 }

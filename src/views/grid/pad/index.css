@@ -22,11 +22,18 @@
 	text-align: center;
 	line-height: 120px;
 	
-	transition: 0.3s all ease;
+	transition: 0.1s background ease, 0.1s outline ease;
 }
 
 .pad:active,
 .pad:focus{
 	outline: none;
 	background: #f1c40f;
+}
+
+.padWrapper.is-highlighted {
+}
+
+.padWrapper.is-highlighted .pad {
+  background: #1abc9c;
 }

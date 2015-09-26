@@ -4,12 +4,14 @@ import _style from './index.css';
 import PlayActionCreators from 'action_creators/play';
 import SequencerActionCreators from 'action_creators/sequencer';
 import { play } from 'services/PlayService.js';
+import classnames from 'classnames';
 const { string, number } = PropTypes;
 
 @connect({
   interests: ({idx}) => ({
     [`pads.samples.${idx}.label`]: 'label',
     [`pads.samples.${idx}.file`]: 'file',
+    [`pads.highlighted.${idx}`]: 'highlighted'
   })
 })
 export default class Pad extends Component {
@@ -26,8 +28,12 @@ export default class Pad extends Component {
 
 
   render() {
+    let cx = classnames('padWrapper', {
+      'is-highlighted': this.props.highlighted
+    });
+    console.log(this.props.highlighted);
     return (
-      <span className="padWrapper">
+      <span className={cx}>
         <button className="pad"
           onClick={this.onTrigger}>
         	{this.props.label}
