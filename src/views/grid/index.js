@@ -5,43 +5,43 @@ import _style from './index.css';
 var temp = {
 	
   pad_1: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
 
   pad_2: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
   
   pad_3: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
   
   pad_4: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },  
 
   pad_5: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
 
   pad_6: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
   
   pad_7: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   },
   
   pad_8: {
-    'name' : 'Pad Name',
-    'url' : 'url'
+    label : 'Pad Name',
+    file : 'url'
   }
 };
 
@@ -54,8 +54,8 @@ export default class Grid extends Component {
       return (
           <Pad 
             key={padId} 
-            name={this.props.pads[padId]['name']}
-            url={this.props.pads[padId]['url']}
+            name={this.props.pads[padId]['label']}
+            url={this.props.pads[padId]['file']}
           />
         );
     }.bind(this));
