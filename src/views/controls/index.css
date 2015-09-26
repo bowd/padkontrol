@@ -18,3 +18,14 @@
   left: 4px;
   color: #d35400;
 }
+
+.ClearPatch{
+  margin-top: 20px;
+  display: inline-block;
+  border: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}

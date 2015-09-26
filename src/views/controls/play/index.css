@@ -1,11 +1,31 @@
 .PlayButton {
-
-}
-
-.PlayButton .start{
-	display: none;
-}
-
-.PlayButton.playing .stop{
+	padding: 0;
+	background: none;
+	border: 0;
+	font-size: 65px;
 	display: block;
+    text-align: center;
+    width: 100%;
+    color: #27af60;
+}
+
+.PlayButton:focus,
+.PlayButton:active,
+.PlayButton:hover{
+	outline: none;
+}
+
+.PlayButton .stop{
+	display: none;
+	color: #c0392b;
+}
+.PlayButton.active .stop{
+	display: inline-block;
+}
+
+.PlayButton .play{
+	display: inline-block;
+}
+.PlayButton.active .play{
+	display: none;
 }
