@@ -23,6 +23,17 @@ const SequencerActionCreators = {
   		type: 'TOGGLE_BEET',
   		payload:{ barId, beatId, padId }
   	});
+  },
+
+  clearPatch: function() {
+  	dispatch({ type: 'CLEAR_PATCH' });
+  },
+
+  setBPM: function(bpm) {
+    dispatch({
+      type: 'SET_BPM',
+      payload: {bpm}
+    });
   }
 
 }

@@ -46,12 +46,18 @@ function resetBeat(state) {
   return state;
 }
 
+function clearPatch(state) {
+  state.set('activePads', Immutable.fromJS({}));
+  return state;
+}
+
 export default function reducer(state=initialState, action) {
   return actionSwitch({
     INIT: init,
     CHANGE_ACTIVE_PAD: changeActivePad,
     ADVANCE_BEAT: advanceBeat,
     TOGGLE_PLAY: resetBeat,
-    TOGGLE_BEET: toggleBeat
+    TOGGLE_BEET: toggleBeat,
+    CLEAR_PATCH: clearPatch
   }, state, action);
 }

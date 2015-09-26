@@ -1,5 +1,6 @@
 import SequencerActionCreators from 'action_creators/sequencer';
 import PlayActionCreators from 'action_creators/play';
+import PadsActionCreators from 'action_creators/pads';
 
 export default class Sequencer {
   constructor(props) {
@@ -24,6 +25,7 @@ export default class Sequencer {
   playSamples() {
     for (let sample of this.activeSamples) {
       PlayActionCreators.playSample(this.samples[sample].file);
+      PadsActionCreators.playFromSequencer(sample);
     }
   }
 

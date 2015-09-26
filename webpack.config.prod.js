@@ -36,6 +36,9 @@ module.exports = {
     }, {
       test: /\.css$/,
       loaders: ['style', 'css', 'autoprefixer']
+    }, {
+      test: /\.wav$/,
+      loaders: [ 'file']
     }]
   }
 };
