@@ -8,6 +8,14 @@ const SequencerActionCreators = {
         padId: id
       }
     })
+  },
+
+  togglePlay: function() {
+    dispatch({ type: 'TOGGLE_PLAY' });
+  },
+
+  advanceBeat: function() {
+    dispatch({ type: 'ADVANCE_BEAT' });
   }
 }
 
