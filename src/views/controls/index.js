@@ -23,12 +23,21 @@ export default class Controls extends Component {
     SequencerActionCreators.clearPatch();
   }
 
+  bmpChanged = (e) => {
+    console.log(e.target.value);
+    let bpm = parseInt(e.target.value);
+    console.log(bpm);
+    SequencerActionCreators.setBPM(bpm);
+  }
+
   render() {
     return (
       <div className="Controls">
         <PlayButton onClick={this.triggerPlay}/>
         <input type="text" ref="tempo"
-               className="Tempo" value={this.props.bpm} />
+          className="Tempo" value={this.props.bpm}
+          onChange={this.bmpChanged}
+         />
         <span className="Tempo-Label">
           bpm
         </span>
