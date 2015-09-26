@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import Bar from './bar';
 
 export default class Sequencer extends Component {
   render() {
     return (
-      <h3> Sequencer </h3>
+      <div className="Sequencer">
+        {
+          [1, 2, 3, 4].map((barIdx) => (
+            <Bar idx={barIdx} />
+          ))
+        }
+      </div>
     )
   }
 }
