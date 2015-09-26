@@ -54,9 +54,10 @@
     "webpack-hot-middleware": "^2.0.0"
   },
   "dependencies": {
-    "react": "^0.13.0",
+    "howler": "^1.1.26",
     "immutable": "^3.6.2",
     "is-equal-shallow": "^0.1.3",
-    "howler": "^1.1.26"
+    "randomcolor": "^0.4.0",
+    "react": "^0.13.0"
   }
 }

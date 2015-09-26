@@ -19,16 +19,49 @@ html {
   box-sizing: inherit;
 }
 
-body{
-	font-style: 16px;
-	font-family: 'Lato', sans-serif;
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
 }
+@-moz-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:38% 0%}
+    50%{background-position:63% 100%}
+    100%{background-position:38% 0%}
+}
+
+
+body{
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+  height: 100vh;
+  background: linear-gradient(61deg, #1dd9a9, #e74c3c, #9b59b6, #27ae60);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 2s ease infinite;
+  -moz-animation: AnimationName 2s ease infinite;
+  -o-animation: AnimationName 2s ease infinite;
+  animation: AnimationName 2s ease infinite;
+}
+
 
 .App {
   width: 100%;
   max-width: 800px;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 95px;
   background: #ecf0f1;
   padding: 20px;
   min-height: 400px;
@@ -42,13 +75,14 @@ body{
 }
 
 .Sequencer-container {
-/*  position: absolute;*/
-  bottom: 0px;
-  left: 0px;
+
+  margin-top: 16px;
   float: left;
+
   height: 60px;
   width: 100%;
   background: rgb(195, 201, 202);
+  border-radius: 3px;
 }
 
 
