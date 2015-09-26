@@ -1,0 +1,13 @@
+
+.pad{
+	border: none;
+	border-radius: 0;
+	
+	transition: 0.3s all ease;
+}
+
+.pad:active,
+.pad:focus{
+	outline: none;
+	background: #f1c40f;
+}
