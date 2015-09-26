@@ -19,6 +19,10 @@ export default class Controls extends Component {
     SequencerActionCreators.togglePlay();
   }
 
+  clearPatch = () => {
+    SequencerActionCreators.clearPatch();
+  }
+
   render() {
     return (
       <div className="Controls">
@@ -28,6 +32,9 @@ export default class Controls extends Component {
         <span className="Tempo-Label">
           bpm
         </span>
+        <button className="ClearPatch" onClick={this.clearPatch}>
+          Clear
+        </button>
       </div>
     )
   }
