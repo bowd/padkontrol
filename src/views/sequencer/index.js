@@ -17,7 +17,7 @@ let { number, bool, object, array } = PropTypes;
 @connect({
   interests: ({activeBeat}) => {
     return {
-      [ `sequencer.activePads.${activeBeat}` ]: 'activeSamples'
+      [ `sequencer.activePads.${activeBeat+1}` ]: 'activeSamples'
     }
   },
 

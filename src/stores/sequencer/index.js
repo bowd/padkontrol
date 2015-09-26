@@ -13,9 +13,9 @@ function init(state) {
 }
 
 function toggleBeat(state, {barId, beatId, padId}){
-  let globalBeat = (barId-1) * 4 + beatId;
-  let activeSamples =
-    state.getIn(['activePads', globalBeat]) || [];
+  let globalBeat = ((barId-1) * 4 + beatId).toString();
+  let activeSamples = state.getIn(['activePads', globalBeat]);
+  activeSamples = activeSamples === undefined ? [] : activeSamples.toJS();
 
   let index = activeSamples.indexOf(padId);
 
@@ -25,7 +25,7 @@ function toggleBeat(state, {barId, beatId, padId}){
     activeSamples.splice(index, 1);
   }
 
-  state.setIn(['activePads', globalBeat.toString()], Immutable.fromJS(activeSamples));
+  state.setIn(['activePads', globalBeat], Immutable.fromJS(activeSamples));
   return state;
 }
 
