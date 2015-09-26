@@ -3,6 +3,7 @@ import { connect } from 'lib/flux';
 import PlayButton from './play';
 import SequencerActionCreators from 'action_creators/sequencer';
 import style from './index.css';
+
 let { number } = PropTypes;
 
 @connect({
