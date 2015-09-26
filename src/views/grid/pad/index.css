@@ -1,7 +1,24 @@
+.padWrapper{
+	display: inline-block;	
+	width: 25%;
+	padding: 5px;
+}
 
 .pad{
-	border: none;
-	border-radius: 0;
+	display: block;
+	width: 100%;
+	color: #2c3e50;
+	font-weight: 900;
+	font-size: 16px;
+	/*text-transform: uppercase;*/
+
+	background: #bdc3c7;
+
+	border: 1px solid #bdc3c7;
+	border-radius: 10px;
+
+	text-align: center;
+	line-height: 120px;
 	
 	transition: 0.3s all ease;
 }

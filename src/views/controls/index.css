@@ -1,5 +1,7 @@
 .Controls {
   padding-top: 15px;
+  font-family: Arial;
+  padding: 5px 9px 6px 17px;
 }
 
 .Controls input.Tempo {

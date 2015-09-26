@@ -7,7 +7,7 @@ import _style from './index.css';
 export default class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App clearfix">
         <div className="Controls-container">
           <Controls />
         </div>
