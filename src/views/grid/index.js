@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Pad from './pad';
+import _style from './index.css';
 
 var temp = {
 	
@@ -67,7 +68,6 @@ export default class Grid extends Component {
     var pads = this.getPads();
     return (
       <div className="grid">
-        <h3> Grid </h3>
         {pads}
       </div>
     )
