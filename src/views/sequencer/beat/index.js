@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import SequencerActionCreators from 'action_creators/sequencer';
 import { connect } from 'lib/flux';
 import style from './index.css';
 let { number } = PropTypes;
@@ -25,6 +26,10 @@ export default class Beat extends Component {
     return (barIdx-1) * 4 + idx === activeBeat + 1;
   }
 
+  onTrigger = () => {
+    SequencerActionCreators.toggleBeat( this.props.idx, this.props.barIdx );
+  }
+
   render() {
     let style = {
       background: colors[this.props.barIdx]
@@ -33,7 +38,9 @@ export default class Beat extends Component {
     let classNames = 'Beat' + (this.isPlaying() ? ' is-playing' : '');
 
     return (
-      <span className={classNames}>
+      <span className={classNames}
+        onClick={this.onTrigger}
+      >
         <span className="Beat-Indicator" style={style}>
           <span className="Beat-Active"> • </span>
         </span>

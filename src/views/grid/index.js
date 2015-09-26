@@ -10,6 +10,7 @@ let { number } = PropTypes;
     'pads.numberOfPads': 'numberOfPads'
   }
 })
+
 export default class Grid extends Component {
   static propTypes = {
     numberOfPads: number
