@@ -3,26 +3,30 @@ import Immutable from 'immutable';
 
 const initialState = Immutable.fromJS({
   currentActivePad: 0,
-	activePads: [[false, false, false, false],[false, false, false, false],[false, false, false, false],[false, false, false, false]]
+  activeBeat: -1,
+  activePads: {}
 });
 
 
 function init(state) {
-	
+
 }
 
-function toggleBeat(state, {barId, beatId}){
-	var beatStatus = initialState.getIn(['activePads', barId, beatId]);
-  var nextBeatStatus;
+function toggleBeat(state, {barId, beatId, padId}){
+  let globalBeat = ((barId-1) * 4 + beatId).toString();
+  let activeSamples = state.getIn(['activePads', globalBeat]);
+  activeSamples = activeSamples === undefined ? [] : activeSamples.toJS();
 
+  let index = activeSamples.indexOf(padId);
 
-  if( beatStatus === undefined ){
-    nextBeatStatus = true;
+  if (index === -1) {
+    activeSamples.push(padId);
   } else {
-    nextBeatStatus = !beatStatus;
+    activeSamples.splice(index, 1);
   }
 
-  initialState.setIn(['activePads', barId, beatId], nextBeatStatus);
+  state.setIn(['activePads', globalBeat], Immutable.fromJS(activeSamples));
+  return state;
 }
 
 function changeActivePad(state, {padId}) {
@@ -30,11 +34,24 @@ function changeActivePad(state, {padId}) {
   return state;
 }
 
+function advanceBeat(state) {
+  let beat = state.get('activeBeat');
+  beat = (beat + 1) % 16;
+  state.set('activeBeat', beat);
+  return state;
+}
+
+function resetBeat(state) {
+  state.set('activeBeat', -1);
+  return state;
+}
 
 export default function reducer(state=initialState, action) {
   return actionSwitch({
     INIT: init,
     CHANGE_ACTIVE_PAD: changeActivePad,
+    ADVANCE_BEAT: advanceBeat,
+    TOGGLE_PLAY: resetBeat,
     TOGGLE_BEET: toggleBeat
   }, state, action);
 }
