@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from './index.css';
+import SequencerActionCreators from 'action_creators/sequencer';
 
 const colors = {
   1: '#16a085',
@@ -9,16 +10,21 @@ const colors = {
 }
 
 export default class Beat extends Component {
+  
+  onTrigger = () => {
+    SequencerActionCreators.toggleBeat( this.props.idx, this.props.barIdx );
+  }
+
   render() {
     let style = {
       background: colors[this.props.barIdx]
     };
 
-    console.log(style);
-    console.log(this.props);
 
     return (
-      <span className="Beat">
+      <span className="Beat"
+        onClick={this.onTrigger}
+      >
         <span className="Beat-Indicator" style={style}>
           <span className="Beat-Active"> • </span>
         </span>

@@ -8,7 +8,17 @@ const SequencerActionCreators = {
         padId: id
       }
     })
+  },
+  toggleBeat: function(barId, beatId){
+  	dispatch({
+  		type: 'TOGGLE_BEET',
+  		payload:{
+  			barId,
+  			beatId
+  		}
+  	});
   }
+
 }
 
 export default SequencerActionCreators;

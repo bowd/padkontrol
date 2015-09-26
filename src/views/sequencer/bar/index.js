@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Beat from '../beat';
 import style from './index.css';
+import SequencerActionCreators from 'action_creators/sequencer';
 
 export default class Bar extends Component {
   render() {
     let {idx, pad} = this.props;
+    
+
+
     return (
       <div className="Bar">
         {
