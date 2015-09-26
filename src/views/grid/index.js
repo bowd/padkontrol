@@ -1,64 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import Pad from './pad';
 import _style from './index.css';
+import { connect } from 'lib/flux';
+import range from 'lib/range';
+let { number } = PropTypes;
 
-var temp = {
-	
-  pad_1: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-
-  pad_2: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-  
-  pad_3: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-  
-  pad_4: {
-    label : 'Pad Name',
-    file : 'url'
-  },  
-
-  pad_5: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-
-  pad_6: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-  
-  pad_7: {
-    label : 'Pad Name',
-    file : 'url'
-  },
-  
-  pad_8: {
-    label : 'Pad Name',
-    file : 'url'
+@connect({
+  interests: {
+    'pads.numberOfPads': 'numberOfPads'
   }
-};
-
+})
 export default class Grid extends Component {
+  static propTypes = {
+    numberOfPads: number
+  }
 
-  getPads(){
-    var padKeys = Object.keys(this.props.pads);
-
-    return padKeys.map(function(padId, i){
-      return (
-          <Pad 
-            key={padId} 
-            name={this.props.pads[padId]['label']}
-            url={this.props.pads[padId]['file']}
-          />
-        );
-    }.bind(this));
+  getPads() {
+    return range(this.props.numberOfPads).map((_null, i) => (
+      <Pad key={i} idx={i} />
+    ))
   }
 
   render() {
@@ -70,5 +30,3 @@ export default class Grid extends Component {
     )
   }
 }
-
-Grid.defaultProps = {pads: temp};

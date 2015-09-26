@@ -2,6 +2,7 @@ import { actionSwitch } from 'stores/lib';
 import Immutable from 'immutable';
 
 const initialState = Immutable.fromJS({
+  numberOfPads: 8,
   samples: {
     0: {
       label: 'Kick',
@@ -38,12 +39,8 @@ const initialState = Immutable.fromJS({
   }
 });
 
-function init(state) {
-  return state;
-}
 
 export default function reducer(state=initialState, action) {
   return actionSwitch({
-    INIT: init
   }, state, action);
 }
