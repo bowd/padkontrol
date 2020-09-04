@@ -60,6 +60,6 @@
     "immutable": "^3.6.2",
     "is-equal-shallow": "^0.1.3",
     "randomcolor": "^0.4.0",
-    "react": "^0.13.0"
+    "react": "^16.13.1"
   }
 }
